@@ -1,0 +1,21 @@
+{
+ "_comment": "information about a campaign and options",
+ "_sample_call": "campaign.json?campaign_id=123456",
+{% if campaign %}
+ "id": {{ campaign.id }},
+ "title": "{{ campaign.title }}",
+ "total_items": {{ campaign.campaignoption_set.all|length }},
+ "multiplier": {{ campaign.multiplier }},
+ "options":
+         [
+			{% for option in campaign.campaignoption_set.all %}
+                 {
+                         "id": {{ option.id }},
+                         "option_title": "{{ option.title }}",
+                         "option_description": "{{ option.description }}",
+                         "display_order": {{ option.display_order }}
+                 }{% if not forloop.last %},{% endif %}
+			{% endfor %}
+         ]
+{% endif %}
+}
