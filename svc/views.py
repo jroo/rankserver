@@ -2,6 +2,7 @@ from svc.models import Campaign, CampaignOption, FormSubmission
 from django.db.models import Count, Sum
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
+from django.views.decorators.csrf import csrf_exempt
 import uuid
 
 def _get_by_external_id(external_id):
@@ -60,6 +61,7 @@ def results(request, format):
     r.mimetype = mime
     return r
     
+@csrf_exempt
 def submit(request):
     
     def _convert_to_points(campaign, rank):
