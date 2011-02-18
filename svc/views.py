@@ -89,7 +89,7 @@ def submit(request):
             format = 'json'
         else:
             format = 'html'
-        return HttpResponseRedirect('/results.%s?id=%s' % (format, campaign.external_id))
+        return HttpResponseRedirect('../results.%s?id=%s' % (format, campaign.external_id))
 
     else:
         return HttpResponseNotFound("not found")
