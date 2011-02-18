@@ -1,0 +1,13 @@
+<html>
+<head></head>
+<body>
+	<h1>{{ results.title }}</h1>
+	<ol>
+	{% for item in results.items %}
+		<li>
+			<div>[{{ item.scaled }}] {{ item.title }} ({{ item.first_place_votes }})</div>
+		</li>
+	{% endfor %}
+	</ol>
+</body>
+</html>

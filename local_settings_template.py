@@ -1,6 +1,6 @@
 # Django settings for rankserver project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 if DEBUG:
@@ -10,6 +10,7 @@ if DEBUG:
         }
     }
 else:
+    print "cache"
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',

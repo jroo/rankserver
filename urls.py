@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     # Example:
     (r'^campaign.json$', 'svc.views.campaign'),
     (r'^submit/$', 'svc.views.submit'),
-
+    (r'^results.(?P<format>\w+)$', 'svc.views.results'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

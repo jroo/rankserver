@@ -1,0 +1,23 @@
+{
+ "_comment": "voting results for a campaign",
+ "_sample_call": "results.json?campaign_id=123456",
+{% if results %}
+ "id": {{ results.id }},
+ "external_id": "{{ results.external_id }}",
+ "title": "{{ results.title }}",
+ "results":
+         [
+			{% for item in results.items %}
+                 {
+						 "rank": {{ forloop.counter }},
+                         "id": {{ item.id }},
+                         "title": "{{ item.title }}",
+                         "description": "{{ item.description }}",
+						 "points": {{ item.points }},
+						 "scaled": {{ item.scaled }},
+						 "first_place_votes": {{ item.first_place_votes }}
+                 }{% if not forloop.last %},{% endif %}
+			{% endfor %}
+         ]
+{% endif %}
+}

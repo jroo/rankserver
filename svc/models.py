@@ -6,6 +6,7 @@ class Campaign(models.Model):
     external_id = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     multiplier = models.IntegerField()
+    max_options = models.IntegerField()
     
 class CampaignOption(models.Model):
     campaign = models.ForeignKey(Campaign)
@@ -18,3 +19,4 @@ class FormSubmission(models.Model):
     campaign = models.ForeignKey(Campaign)
     item = models.ForeignKey(CampaignOption)
     rank = models.IntegerField()
+    points = models.IntegerField()
