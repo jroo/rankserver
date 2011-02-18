@@ -1,7 +1,7 @@
 from svc.models import Campaign, CampaignOption, FormSubmission
 from django.db.models import Count, Sum
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_exempt
 import uuid
 
