@@ -1,7 +1,7 @@
 from svc.models import Campaign, CampaignOption, FormSubmission
 from django.db.models import Count, Sum
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_exempt
 import uuid
 
@@ -89,7 +89,7 @@ def submit(request):
             format = 'json'
         else:
             format = 'html'
-        return HttpResponseRedirect('/results.%s?id=%s' % (format, campaign.external_id))
+        return HttpResponseRedirect('../results.%s?id=%s' % (format, campaign.external_id))
 
     else:
         return HttpResponseNotFound("not found")
