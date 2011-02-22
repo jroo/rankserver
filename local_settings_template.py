@@ -10,7 +10,6 @@ if DEBUG:
         }
     }
 else:
-    print "cache"
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
