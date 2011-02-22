@@ -3,7 +3,7 @@
  "_sample_call": "campaign.json?campaign_id=123456",
 {% if campaign %}
  "id": {{ campaign.id }},
- "external_id": {{ campaign.external_id }},
+ "external_id": "{{ campaign.external_id }}",
  "title": "{{ campaign.title }}",
  "total_items": {{ campaign.campaignoption_set.all|length }},
  "multiplier": {{ campaign.multiplier }},
